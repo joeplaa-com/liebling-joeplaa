@@ -43,7 +43,7 @@ into the {body} of the default.hbs template --}}
   <div class="l-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
       <div class="l-grid centered">
-        {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
+        {{#get "posts" filter="featured:true+tag:-hash-book" include="authors,tags" limit="5" as |featured|}}
           {{#if featured}}
             <div class="m-featured-slider swiper js-featured-slider">
               <div class="m-featured-slider__list swiper-wrapper">
@@ -104,8 +104,10 @@ into the {body} of the default.hbs template --}}
             </div>
           {{/if}}
         {{/get}}
-        {{!-- The tag below iterates over all the posts --}}
+        {{!-- The tag below iterates over all the posts without tag "#book" --}}
+        {{#get 'posts' filter='tag:-hash-book' include="authors,tags" as |posts|}}
         {{> "loop"}}
+        {{/get}}
       </div>
     </div>
     {{!-- Links to Previous/Next posts --}}
