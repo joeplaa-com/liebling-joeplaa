@@ -104,10 +104,7 @@ into the {body} of the default.hbs template --}}
             </div>
           {{/if}}
         {{/get}}
-        {{!-- The tag below iterates over all the posts without tag "#book" --}}
-        {{#get 'posts' filter='tag:-hash-book' include="authors,tags" as |posts|}}
         {{> "loop"}}
-        {{/get}}
       </div>
     </div>
     {{!-- Links to Previous/Next posts --}}

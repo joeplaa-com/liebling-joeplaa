@@ -18,10 +18,12 @@ into the {body} of the default.hbs template --}}
 {{!< default}}
 
 {{!-- Special header.hbs partial to generate the <header> tag --}}
-{{> header background=@site.cover_image}}
+{{#page}}
+  {{> header background=feature_image}}
+{{/page}}
 
 <main class="main-wrap">
-  {{#post}}
+  {{#page}}
     {{!-- Inject styles of the hero image to make it responsive --}}
     {{> hero background=feature_image}}
     <div class="m-hero__content" data-aos="fade-down">
@@ -31,16 +33,14 @@ into the {body} of the default.hbs template --}}
       {{/if}}
     </div>
     </section>
-  {{/post}}
-  </section>
+  {{/page}}
   <div class="l-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
       <div class="l-grid centered">
-        {{!-- The tag below iterates over all the posts with tag "#book" --}}
-        {{#get 'posts' filter='tag:hash-book' include="authors,tags" as |posts|}}
         {{> "loop"}}
-        {{/get}}
       </div>
     </div>
+    {{!-- Links to Previous/Next posts --}}
+    {{pagination}}
   </div>
 </main>
