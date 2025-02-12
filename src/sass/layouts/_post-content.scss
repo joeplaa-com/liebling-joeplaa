@@ -24,8 +24,8 @@
     margin: 0 0 30px;
 
     @include respond-to("medium") {
-      padding-top: 10px;
-      margin-bottom: 40px;
+      padding-top: 40px;
+      margin-bottom: 10px;
     }
   }
 
@@ -81,13 +81,13 @@
     letter-spacing: 0.2px;
     line-height: 1.5;
     font-size: 1.125rem;
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
 
     @include respond-to("medium") {
       letter-spacing: 0.3px;
       line-height: 1.6;
       font-size: 1.25rem;
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
     }
 
     img {
@@ -393,7 +393,7 @@
 
   code {
     display: inline-block;
-    color: var(--link-color);
+    // color: var(--link-color);
     font-size: 0.9rem;
     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     padding: 0 5px;
@@ -406,7 +406,7 @@
     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     margin: 0 0 25px;
     overflow-x: auto;
-    border-radius: 5px;
+    // border-radius: 5px;
     background-color: var(--secondary-subtle-color);
     white-space: pre;
     word-spacing: normal;
@@ -427,7 +427,7 @@
 
     > code {
       display: block;
-      padding: 10px;
+      // padding: 10px;
       white-space: pre;
       word-spacing: normal;
       word-break: normal;
@@ -441,9 +441,9 @@
       -ms-hyphens: none;
       hyphens: none;
 
-      @include respond-to("medium") {
-        padding: 20px;
-      }
+      // @include respond-to("medium") {
+      //   padding: 20px;
+      // }
     }
 
     &.line-numbers > code {
